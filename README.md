@@ -8,10 +8,10 @@ A small PowerShell script to self-activate your eligible Microsoft Entra ID (Azu
 - Detects the signed-in user and lists all Azure AD groups where the user is eligible for PIM activation.
 - Shows whether each listed group is currently active for the user.
 - Lets you pick a single group by number or activate all inactive eligible groups at once.
-- Submits an activation request that starts immediately and lasts 8 hours, with a default Swedish justification.
+- Submits an activation request that starts immediately and lasts 8 hours, with a default English justification.
 
 Notes
-- The script UI/messages are in Swedish.
+- The script UI/messages are in English.
 - Activations are requested with accessId `member` (not `owner`).
 - Default duration is 8 hours (PT8H). You can change this in the script.
 
@@ -51,8 +51,8 @@ pwsh -File "./# PIMify.ps1"
 What to expect
 1) You’ll be prompted to sign in to Microsoft Graph.
 2) A list of PIM-eligible groups is shown with status:
-	 - ✔ AKTIV = active
-	 - ✘ INAKTIV = inactive
+	 - ✔ ACTIVE = active
+	 - ✘ INACTIVE = inactive
 3) Enter the number of a group to activate it, or `A` to activate all inactive groups.
 
 ## Behavior details
@@ -67,18 +67,18 @@ What to expect
 	- `accessId`: `member`
 	- `scheduleInfo.startDateTime`: now
 	- `scheduleInfo.expiration`: `afterDuration` of `PT8H`
-	- `justification`: Swedish text included in the script
+	- `justification`: English text included in the script
 
 ## Customize
 
 - Duration: change `"duration": "PT8H"` to e.g. `"PT4H"` or `"PT2H"`.
-- Justification: update the Swedish justification string to your org’s standard text.
+- Justification: update the English justification string to your org's standard text.
 - Access level: if appropriate in your tenant, you can switch `accessId` from `member` to `owner` for owner-level activation.
 
 ## Troubleshooting
 
-- “Inga grupper tillgängliga”: you have no PIM-eligible groups or lack permissions.
-- “Ogiltigt val.”: the input wasn’t a number in range and wasn’t `A`.
+- "No groups available for activation via PIM.": you have no PIM-eligible groups or lack permissions.
+- "Invalid choice.": the input wasn't a number in range and wasn't `A`.
 - Graph auth/consent errors: ensure `Microsoft.Graph` is installed and that your account/tenant allows the requested scope; admin consent might be required.
 - Module not found: run `Install-Module Microsoft.Graph -Scope CurrentUser` and restart PowerShell.
 
