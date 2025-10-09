@@ -1,7 +1,7 @@
 #requires -Modules Microsoft.Graph
 param()
 
-Connect-MgGraph -Scopes "PrivilegedAccess.ReadWrite.AzureADGroup" -NoWelcome
+Connect-MgGraph -Scopes "PrivilegedAccess.Write.AzureADGroup" -NoWelcome
 $user = Get-MgUser -UserId (Get-MgContext).Account
 $eligibleGroups = Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstance -Filter "principalId eq '$($user.Id)'"
 $activeGroupIds = (Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstance -Filter "principalId eq '$($user.Id)'") | ForEach-Object { $_.GroupId }
