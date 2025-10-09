@@ -4,7 +4,7 @@ A small PowerShell script to self-activate your eligible Microsoft Entra ID (Azu
 
 ## What it does
 
-- Connects to Microsoft Graph with the scope `PrivilegedAccess.ReadWrite.AzureADGroup`.
+- Connects to Microsoft Graph with the scope `PrivilegedAccess.Write.AzureADGroup`.
 - Detects the signed-in user and lists all Azure AD groups where the user is eligible for PIM activation.
 - Shows whether each listed group is currently active for the user.
 - Lets you pick a single group by number or activate all inactive eligible groups at once.
@@ -23,7 +23,7 @@ Notes
 	- Install if needed: `Install-Module Microsoft.Graph -Scope CurrentUser`
 - Permissions
 	- Your account must have rights to self-activate group membership via PIM.
-	- The app will request the Graph scope `PrivilegedAccess.ReadWrite.AzureADGroup` on sign-in (admin consent may be required in your tenant).
+	- The app will request the Graph scope `PrivilegedAccess.Write.AzureADGroup` on sign-in (admin consent may be required in your tenant).
 
 ## Usage
 
