@@ -2,6 +2,9 @@
 
 A small PowerShell script to self-activate your eligible Microsoft Entra ID (Azure AD) group assignments via Privileged Identity Management (PIM) using the Microsoft Graph PowerShell SDK.
 
+<img width="1252" height="236" alt="image" src="https://github.com/user-attachments/assets/60351416-1669-45c0-8ff7-65921fe2dbe7" />
+
+
 ## What it does
 
 - Connects to Microsoft Graph with the scope `PrivilegedAccess.Write.AzureADGroup`.
