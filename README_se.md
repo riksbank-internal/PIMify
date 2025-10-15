@@ -2,6 +2,8 @@
 
 Ett litet PowerShell‑skript som självaktiverar dina berättigade Microsoft Entra ID (Azure AD) gruppmedlemskap via Privileged Identity Management (PIM) med hjälp av Microsoft Graph PowerShell SDK.
 
+<img width="1252" height="236" alt="image" src="https://github.com/user-attachments/assets/ef7f1e23-e650-403d-9790-2116f430d958" />
+
 ## Vad skriptet gör
 
 - Ansluter till Microsoft Graph med omfånget `PrivilegedAccess.ReadWrite.AzureADGroup`.
